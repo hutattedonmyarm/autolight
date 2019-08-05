@@ -11,9 +11,9 @@ import brightness
 def signal_handler(sig, frame):
         pixels.fill((0, 0, 0))
         sys.exit(0)
-signal.signal(signal.SIGINT, signal_handler)
-pixels = None
+
 async def main():
+    signal.signal(signal.SIGINT, signal_handler)
     pixel_pin = board.D12
 
     # The number of NeoPixels
@@ -25,12 +25,15 @@ async def main():
 
     pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=True,
                                pixel_order=ORDER)
+    sleep_time = 0.5
     while True:
         try:
-            b = await brightness.is_lit()
-            light = 0 if b else 255
-            print(f'Setting neopixel brightness to {light}')
-            await asyncio.sleep(1)
+            #b = await brightness.is_lit()
+            #light = 0 if b else 255
+            b = await brightness.get_brightness()
+            light = 255 - b
+            #print(f'Setting neopixel brightness to {light}')
+            await asyncio.sleep(sleep_time)
             pixels.fill((light, light, light))
         except Exception as ex:
             print(ex)
