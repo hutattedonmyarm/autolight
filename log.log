@@ -1,0 +1,1139 @@
+Signal handler called: 2, <frame at 0xb5a974e0, file '/usr/lib/python3.7/selectors.py', line 468, code select>
+unhandled exception during asyncio.run() shutdown
+task: <Task finished coro=<main() done, defined at ./light.py:25> exception=AttributeError("'RootLogger' object has no attribute 'errir'")>
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 571, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1739, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.7/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "./light.py", line 23, in signal_handler
+    sys.exit(0)
+SystemExit: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./light.py", line 50, in main
+    print_status = await octoprint.is_printing_async(session)
+  File "/home/pi/autolight/octoprint.py", line 43, in is_printing_async
+    async with session.get(BASE_ADDRESS + '/api/job') as resp:
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/connector.py", line 955, in _create_direct_connection
+    traces=traces), loop=self._loop)
+concurrent.futures._base.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./light.py", line 60, in main
+    LOGGER.errir(ex)
+AttributeError: 'RootLogger' object has no attribute 'errir'
+Signal handler called: 2, <frame at 0xb5957b70, file '/usr/lib/python3.7/threading.py', line 1048, code _wait_for_tstate_lock>
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Signal handler called: 2, <frame at 0xb5abe4e0, file '/usr/lib/python3.7/selectors.py', line 468, code select>
+unhandled exception during asyncio.run() shutdown
+task: <Task finished coro=<main() done, defined at ./light.py:25> exception=AttributeError("'RootLogger' object has no attribute 'errir'")>
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 571, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1739, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.7/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "./light.py", line 23, in signal_handler
+    sys.exit(0)
+SystemExit: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./light.py", line 58, in main
+    await asyncio.sleep(sleep_time)
+  File "/usr/lib/python3.7/asyncio/tasks.py", line 568, in sleep
+    return await future
+concurrent.futures._base.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./light.py", line 60, in main
+    LOGGER.errir(ex)
+AttributeError: 'RootLogger' object has no attribute 'errir'
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False
+Printing? False
+Is printing? False

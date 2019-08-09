@@ -1,43 +1,65 @@
 #!/usr/bin/env python3
+'''Queries the lgihtsensor and octpotint
+and turns the neopixels on/off accordingly'''
 import signal
 import sys
-import time
 import asyncio
 import board
 import neopixel
 import brightness
+import octoprint
+import config
+import logging
+from logging import handlers
 
+LOGGER = logging.getLogger()
 
-def signal_handler(sig, frame):
-        pixels.fill((0, 0, 0))
-        sys.exit(0)
+def signal_handler(sig, hand):
+    LOGGER.info('Signal handler called: %s, %s', sig, hand)
+    '''
+    if PIXELS:
+        PIXELS.fill((0, 0, 0))
+    '''
+    sys.exit(0)
 
 async def main():
+    '''Queries the lgihtsensor and octpotint
+    and turns the neopixels on/off accordingly'''
     signal.signal(signal.SIGINT, signal_handler)
-    pixel_pin = board.D12
+    handler = handlers.TimedRotatingFileHandler('log.log', interval=1, when='D')
+    LOGGER.addHandler(handler)
+    LOGGER.setLevel(logging.DEBUG)
+    pixel_pin = config.AUTOLIGHT['pixel_pin']
 
     # The number of NeoPixels
     num_pixels = 8
 
     # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
     # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
-    ORDER = neopixel.GRB
+    order = neopixel.GRB
 
-    pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=True,
-                               pixel_order=ORDER)
-    sleep_time = 0.5
-    while True:
-        try:
-            #b = await brightness.is_lit()
-            #light = 0 if b else 255
-            b = await brightness.get_brightness()
-            light = 255 - b
-            #print(f'Setting neopixel brightness to {light}')
-            await asyncio.sleep(sleep_time)
-            pixels.fill((light, light, light))
-        except Exception as ex:
-            print(ex)
-            pixels.fill((0,0,0))
-            sys.exit(1)
+    pixels = neopixel.NeoPixel(pixel_pin,
+                               num_pixels,
+                               brightness=0.2,
+                               auto_write=True,
+                               pixel_order=order)
+    sleep_time = config.AUTOLIGHT['sleep_time']
+    async with octoprint.get_session() as session:
+        while True:
+            try:
+                print_status = await octoprint.is_printing_async(session)
+                LOGGER.info('Is printing? %s', print_status)
+                light = 0
+                if print_status:
+                    current_brightness = await brightness.get_brightness()
+                    LOGGER.info('Brightness %s', current_brightness)
+                    light = 255 - current_brightness
+                    pixels.fill((light, light, light))
+                await asyncio.sleep(sleep_time)
+            except Exception as ex:
+                LOGGER.error(ex)
+                pixels.fill((0, 0, 0))
+                sys.exit(1)
 
 asyncio.run(main())
+
