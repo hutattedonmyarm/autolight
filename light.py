@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 '''Queries the lgihtsensor and octpotint
 and turns the neopixels on/off accordingly'''
+
 import signal
 import sys
 import asyncio
@@ -9,6 +10,7 @@ import neopixel
 import brightness
 import octoprint
 import config
+import os
 import logging
 from logging import handlers
 
@@ -23,10 +25,12 @@ def signal_handler(sig, hand):
     sys.exit(0)
 
 async def main():
-    '''Queries the lgihtsensor and octpotint
+    '''Queries the lightsensor and octoprint
     and turns the neopixels on/off accordingly'''
     signal.signal(signal.SIGINT, signal_handler)
-    handler = handlers.TimedRotatingFileHandler('log.log', interval=1, when='D')
+    log_file = os.path.join(os.path.dirname(os.path.realpath(__file__)),'autolight.log')
+    handler = handlers.TimedRotatingFileHandler(log_file, interval=1, when='D')
+    handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(module)s:%(name)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
     LOGGER.addHandler(handler)
     LOGGER.setLevel(logging.DEBUG)
     pixel_pin = config.AUTOLIGHT['pixel_pin']
