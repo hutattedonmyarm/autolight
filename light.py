@@ -36,15 +36,15 @@ async def main():
     pixel_pin = config.AUTOLIGHT['pixel_pin']
 
     # The number of NeoPixels
-    num_pixels = 8
+    num_pixels = config.AUTOLIGHT['num_pixels']
 
     # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
     # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
-    order = neopixel.GRB
+    order = config.AUTOLIGHT['pixel_order']
 
     pixels = neopixel.NeoPixel(pixel_pin,
                                num_pixels,
-                               brightness=0.2,
+                               brightness=config.AUTOLIGHT['pixel_brightness'],
                                auto_write=True,
                                pixel_order=order)
     sleep_time = config.AUTOLIGHT['sleep_time']
@@ -58,7 +58,8 @@ async def main():
                     current_brightness = await brightness.get_brightness()
                     LOGGER.info('Brightness %s', current_brightness)
                     light = 255 - current_brightness
-                    pixels.fill((light, light, light))
+                pixels.fill((light, light, light))
+                LOGGER.info('Setting light to %s', light) 
                 await asyncio.sleep(sleep_time)
             except Exception as ex:
                 LOGGER.error(ex)
