@@ -30,6 +30,12 @@ async def is_lit(num_readings: int = 5, reading_timeout: int = 200):
     num_readings: int -- How many times the sensor should be queried
     reading_timeout: int -- Timeout in ms after which the room is considered dark
     '''
+    '''
+    This is a relict from code designed to work with an RC timing circuit.
+    Since I plant o move to one again I decided to keep it, but adjust it
+    Currently the circuit is missing the capacitor, so if it's dark enough no current will flow
+    And the function times out. If it's light enough the function returns
+    '''
     readings = []
     for _ in range(0, num_readings):
         with DigitalInOut(RC_PIN) as pin:
