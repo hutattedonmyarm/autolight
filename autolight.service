@@ -1,0 +1,12 @@
+[Unit]
+Description=Status LED Service
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi
+ExecStart=sudo /home/pi/autolight/light.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
