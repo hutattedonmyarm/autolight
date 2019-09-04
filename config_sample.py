@@ -16,5 +16,8 @@ BRIGHTNESS = {
 
 AUTOLIGHT = {
     'pixel_pin': board.D12,
-    'sleep_time': 0.5
+    'sleep_time': 5,
+    'num_pixels': 8,
+    'pixel_brightness': 1.0,
+    'pixel_order': neopixel.RGB
 }
